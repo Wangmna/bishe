@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body,html{
+            height:100%;
+        }
+        body{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width:700px;
+            height:500px;
+            border:1px solid #000000;
+            position:absolute;
+            left:0;top:0;right:0;bottom:0;
+            margin:auto;
+        }
+        #myCanvas{
+            background-color:#aaa;
+            display:block;
+            float:left;
+        }
+        .control{
+            width:200px;
+            height:100%;
+            float:right;
+            background-color: #edeed3;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <div class="control"></div>
+</div>
+</body>
+<script>
+    var canvas=document.getElementById("myCanvas");
+    var cobj=canvas.getContext("2d");
+    cobj.strokeStyle="#ddd";
+    cobj.beginPath();
+    for(var i=0;i<501;i+=10){
+        cobj.moveTo(0,i);
+        cobj.lineTo(500,i);
+    }
+    for(var i=0;i<501;i+=10){
+        cobj.moveTo(i,0);
+        cobj.lineTo(i,500);
+    }
+    cobj.stroke();
+</script>
+</html>
